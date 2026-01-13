@@ -3,49 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Countdown Begins</title>
+  <title>Birthday Countdown 🎂</title>
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Floating decorations -->
-  <div class="floating floating1">🎈</div>
-  <div class="floating floating2">🎉</div>
-  <div class="floating floating3">🎁</div>
-  <div class="floating floating4">✨</div>
+  <!-- 🎈 Animated Background -->
+  <div class="bg-animations">
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="confetti"></span>
+    <span class="confetti"></span>
+  </div>
 
-  <div class="container">
-    <h1>Something fun is on the way 🎊</h1>
-    <p class="subtitle">Countdown to a special day</p>
+  <!-- ================= COUNTDOWN PAGE ================= -->
+  <div class="page active bg-timer" id="page-timer">
+    <div class="container" id="timer-container">
 
-    <!-- Optional animated GIF -->
-    <img 
-      src="https://media.giphy.com/media/3ohs4BSacFKI7A717y/giphy.gif"
-      alt="celebration"
-      class="gif"
-    />
+      <img class="gif"
+        src="https://media.giphy.com/media/3ohs4BSacFKI7A717y/giphy.gif"
+        alt="waiting" />
 
-    <div class="timer">
-      <div class="time-box">
-        <span id="days">00</span>
-        <small>Days</small>
+      <h1 class="fade">Something fun is loading 🎉</h1>
+      <p class="subtitle fade delay-1">April 11 is getting closer…</p>
+
+      <div class="timer fade delay-2">
+        <div class="time-box"><span id="days">00</span><small>Days</small></div>
+        <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+        <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+        <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
       </div>
-      <div class="time-box">
-        <span id="hours">00</span>
-        <small>Hours</small>
+
+      <div class="update-box fade delay-3">
+        <button onclick="goToPage(1)">11:11 Update</button>
+        <p class="update-note">Today’s update • takes less than a minute</p>
       </div>
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <small>Minutes</small>
-      </div>
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <small>Seconds</small>
-      </div>
+
     </div>
+  </div>
 
-    <p class="note">🎂 The countdown has officially begun!</p>
+  <!-- ================= PAGE 1 ================= -->
+  <div class="page bg-page1" id="page-1">
+    <div class="container small">
+
+      <img class="gif small-gif"
+        src="https://media.giphy.com/media/FOuIZIAdCFUSrPkcyp/giphy.gif" />
+
+      <h2 class="fade">Quick honesty</h2>
+      <p class="text fade delay-1">Thought I will Today’s Update also😅??</p>
+      <p class="subtext fade delay-2">Heg Madli Helu Madamji Update na Miss madoke agutha🫠.</p>
+
+      <button class="fade delay-3" onclick="goToPage(2)">Next</button>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page bg-page2" id="page-2">
+    <div class="container small">
+
+      <img class="gif small-gif"
+        src="https://media.giphy.com/media/sthmCnCpfr8M8jtTQy/giphy.gif" />
+
+      <h2 class="fade">Okay😊 </h2>
+      <p class="text fade delay-1">Ready for today’s 11:11 update🤭?</p>
+      <p class="subtext fade delay-2">Nothing big. Just something thoughtful😁.</p>
+
+      <button class="fade delay-3" onclick="goToPage(3)">Continue</button>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 3 ================= -->
+  <div class="page bg-page3" id="page-3">
+    <div class="container small">
+
+      <img class="gif small-gif"
+        src="https://media.giphy.com/media/iZbdDeGuIV0ZadYU7P/giphy.gif" />
+
+      <h2 class="fade">Quick 11:11 note 🎉</h2>
+
+      <p class="text fade delay-1">
+        You’re honestly one of the most down-to-earth people I’ve ever seen.✨😊
+      </p>
+
+      <p class="subtext fade delay-2">
+        No noise. No pretending. Just real.
+      </p>
+
+      <p class="teaser fade delay-3">
+        Ready for a rewind?
+20th birthday → baby version unlocked 😄
+adhu nale Indha Start aguthe Stay Tuned<b></b> 🐒
+      </p>
+
+      <button class="fade delay-4" onclick="goToPage(0)">
+        Back to Countdown
+      </button>
+    </div>
   </div>
 
   <script src="script.js"></script>

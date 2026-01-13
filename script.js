@@ -6,21 +6,21 @@ const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 
 function updateTimer() {
-  const now = new Date().getTime();
+  const now = Date.now();
   const diff = targetDate - now;
 
   if (diff <= 0) {
-    document.querySelector(".container").innerHTML = `
-      <h1>Happy Birthday 🎉</h1>
-      <p class="subtitle">Hope today brings smiles and good vibes.</p>
+    document.getElementById("timer-container").innerHTML = `
+      <h1>Happy Birthday 🎂🎉</h1>
+      <p class="subtitle">Hope today is full of smiles.</p>
     `;
     return;
   }
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
 
   daysEl.textContent = String(days).padStart(2, "0");
   hoursEl.textContent = String(hours).padStart(2, "0");
@@ -30,3 +30,12 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 updateTimer();
+
+function goToPage(num) {
+  document.querySelectorAll(".page").forEach(p =>
+    p.classList.remove("active")
+  );
+  document.getElementById(
+    num === 0 ? "page-timer" : `page-${num}`
+  ).classList.add("active");
+}
